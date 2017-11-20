@@ -1,12 +1,14 @@
+import java.util.Random;
+
 /**
  * The manager class should be extended from the Employee class
  * 
  * TODO write the syntax for the Manager class to Extend the Employee class
  */
-public class Manager{
+public class Manager extends Employee {
 	//maxSize is the total amount of employees that this manager can support
 	int maxSize;
-	
+	int shelves = 0;
 	/*
 	 * This constructor will not work correctly until the Manager class has been extended from the Employee class
 	 * Without extending employee, the manager class does not understand the variables name and salary
@@ -34,4 +36,22 @@ public class Manager{
 			throw new Exception();
 		}
 	}
+	
+	
+	/**
+	 * a method which randomly determines if the Stocker has finished stocking the selves
+	 * @return 
+	 */
+	public Boolean StockShelf() {
+		Random rand = new Random();
+		Boolean Finished = rand.nextBoolean();
+		if(Finished == true) {
+			shelves++;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 }

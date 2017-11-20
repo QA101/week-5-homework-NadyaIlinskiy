@@ -12,7 +12,7 @@ public class Store {
 		s.PrintManager();
 		
 		//TODO: The manager doesn't know how to StockShelfs.
-		Manager.StockSelf();
+		s.manager.StockShelf();
 		
 		/**
 		 * Challenge Concept: try/catch and throwing an exception
@@ -35,7 +35,8 @@ public class Store {
 		 * 
 		 * TODO: assign the manager for the store class and add the manager to the employee list
 		 */
-		employees.add(new Manager("Tim", 50000, 5));
+		manager = new Manager("Tim", 50000, 7);
+		employees.add(manager);
 		
 		//Notice that I can put a manager inside a list of employees because Manager is a subclass of Employee.
 	}
@@ -60,7 +61,7 @@ public class Store {
 			employees.add(manager.HireEmployee(employees.size(), "Sasha"));
 		}
 		catch(Exception e) {
-			//do nothing
+			System.out.println("Too big team. Can't hire more people.");
 		}
 	}
 
